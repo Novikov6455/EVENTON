@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160511 15:12:21.193" generator="Robot 3.0 (Python 2.7.11 on win32)">
+<suite source="C:\development\EventOn\tests\EventOnTest.robot" id="s1" name="EventOnTest">
+<test id="s1-t1" name="User can Launch App">
+<kw name="Launch App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=appium</arg>
+<arg>appPackage=com.eventon.app</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:12:36.043" starttime="20160511 15:12:21.381"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Application launched successfully!!</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:12:36.043" starttime="20160511 15:12:36.043"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:12:36.043" starttime="20160511 15:12:21.381"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:12:36.730" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:12:36.730" starttime="20160511 15:12:36.043"></status>
+</kw>
+<kw type="teardown" name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application.</doc>
+<status status="PASS" endtime="20160511 15:12:37.886" starttime="20160511 15:12:36.730"></status>
+</kw>
+<tags>
+<tag>001 Start app</tag>
+</tags>
+<status status="PASS" endtime="20160511 15:12:37.886" critical="yes" starttime="20160511 15:12:21.381"></status>
+</test>
+<test id="s1-t2" name="User can search any Location on the map">
+<kw name="When Launch App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=appium</arg>
+<arg>appPackage=com.eventon.app</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:12:52.420" starttime="20160511 15:12:37.886"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Application launched successfully!!</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:12:52.420" starttime="20160511 15:12:52.420"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:12:52.420" starttime="20160511 15:12:37.886"></status>
+</kw>
+<kw name="Then Search some location">
+<arguments>
+<arg>${Location}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:12:54.202" starttime="20160511 15:12:52.420"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<msg timestamp="20160511 15:12:54.202" level="INFO">Clicking element 'id=com.eventon.app:id/menu_search'.</msg>
+<status status="PASS" endtime="20160511 15:12:54.811" starttime="20160511 15:12:54.202"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/search_src_text</arg>
+<arg>${Location}</arg>
+</arguments>
+<msg timestamp="20160511 15:12:54.811" level="INFO">Typing text 'San Francisco' into text field 'id=com.eventon.app:id/search_src_text'</msg>
+<status status="PASS" endtime="20160511 15:13:05.366" starttime="20160511 15:12:54.811"></status>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>adb shell input keyboard keyevent 66 keyboard</arg>
+</arguments>
+<msg timestamp="20160511 15:13:05.382" level="INFO">Running command 'adb shell input keyboard keyevent 66 keyboard 2&gt;&amp;1'.</msg>
+<status status="PASS" endtime="20160511 15:13:07.054" starttime="20160511 15:13:05.366"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Location opened on the map</arg>
+</arguments>
+<msg timestamp="20160511 15:13:07.054" level="INFO">Location opened on the map</msg>
+<status status="PASS" endtime="20160511 15:13:07.054" starttime="20160511 15:13:07.054"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Location found and opened</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:07.054" starttime="20160511 15:13:07.054"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:13:07.054" starttime="20160511 15:12:52.420"></status>
+</kw>
+<kw name="Then capture page screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:13:08.132" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:13:08.132" starttime="20160511 15:13:07.054"></status>
+</kw>
+<kw type="teardown" name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application.</doc>
+<status status="PASS" endtime="20160511 15:13:09.163" starttime="20160511 15:13:08.132"></status>
+</kw>
+<tags>
+<tag>002 Main function</tag>
+</tags>
+<status status="PASS" endtime="20160511 15:13:09.163" critical="yes" starttime="20160511 15:12:37.886"></status>
+</test>
+<test id="s1-t3" name="User can search their Location on the map">
+<kw name="When Launch App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=appium</arg>
+<arg>appPackage=com.eventon.app</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:23.884" starttime="20160511 15:13:09.163"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Application launched successfully!!</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:23.884" starttime="20160511 15:13:23.884"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:13:23.884" starttime="20160511 15:13:09.163"></status>
+</kw>
+<kw name="Then Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>name=My Location</arg>
+</arguments>
+<msg timestamp="20160511 15:13:23.884" level="INFO">Clicking element 'name=My Location'.</msg>
+<status status="PASS" endtime="20160511 15:13:27.431" starttime="20160511 15:13:23.884"></status>
+</kw>
+<kw name="Then Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:13:28.134" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:13:28.134" starttime="20160511 15:13:27.431"></status>
+</kw>
+<kw type="teardown" name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application.</doc>
+<status status="PASS" endtime="20160511 15:13:29.150" starttime="20160511 15:13:28.134"></status>
+</kw>
+<tags>
+<tag>003 Main function</tag>
+</tags>
+<status status="PASS" endtime="20160511 15:13:29.150" critical="yes" starttime="20160511 15:13:09.163"></status>
+</test>
+<test id="s1-t4" name="User can search signs of EVENTS on the map">
+<kw name="When Launch App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=appium</arg>
+<arg>appPackage=com.eventon.app</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:43.708" starttime="20160511 15:13:29.150"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Application launched successfully!!</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:43.708" starttime="20160511 15:13:43.708"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:13:43.708" starttime="20160511 15:13:29.150"></status>
+</kw>
+<kw name="Then Search some location">
+<arguments>
+<arg>${Location}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:46.228" starttime="20160511 15:13:43.708"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<msg timestamp="20160511 15:13:46.228" level="INFO">Clicking element 'id=com.eventon.app:id/menu_search'.</msg>
+<status status="PASS" endtime="20160511 15:13:46.540" starttime="20160511 15:13:46.228"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/search_src_text</arg>
+<arg>${Location}</arg>
+</arguments>
+<msg timestamp="20160511 15:13:46.556" level="INFO">Typing text 'San Francisco' into text field 'id=com.eventon.app:id/search_src_text'</msg>
+<status status="PASS" endtime="20160511 15:13:55.172" starttime="20160511 15:13:46.556"></status>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>adb shell input keyboard keyevent 66 keyboard</arg>
+</arguments>
+<msg timestamp="20160511 15:13:55.187" level="INFO">Running command 'adb shell input keyboard keyevent 66 keyboard 2&gt;&amp;1'.</msg>
+<status status="PASS" endtime="20160511 15:13:57.375" starttime="20160511 15:13:55.172"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Location opened on the map</arg>
+</arguments>
+<msg timestamp="20160511 15:13:57.375" level="INFO">Location opened on the map</msg>
+<status status="PASS" endtime="20160511 15:13:57.375" starttime="20160511 15:13:57.375"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Location found and opened</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:13:57.375" starttime="20160511 15:13:57.375"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:13:57.375" starttime="20160511 15:13:43.708"></status>
+</kw>
+<kw name="Then click element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>class=android.view.View</arg>
+</arguments>
+<msg timestamp="20160511 15:13:57.375" level="INFO">Clicking element 'class=android.view.View'.</msg>
+<status status="PASS" endtime="20160511 15:14:00.047" starttime="20160511 15:13:57.375"></status>
+</kw>
+<kw name="Then capture page screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:14:01.094" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:14:01.094" starttime="20160511 15:14:00.047"></status>
+</kw>
+<kw type="teardown" name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application.</doc>
+<status status="PASS" endtime="20160511 15:14:02.141" starttime="20160511 15:14:01.094"></status>
+</kw>
+<tags>
+<tag>004 Main function</tag>
+</tags>
+<status status="PASS" endtime="20160511 15:14:02.141" critical="yes" starttime="20160511 15:13:29.150"></status>
+</test>
+<test id="s1-t5" name="User can search list of EVENTS">
+<kw name="When Launch App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=appium</arg>
+<arg>appPackage=com.eventon.app</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:16.448" starttime="20160511 15:14:02.141"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Application launched successfully!!</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:16.448" starttime="20160511 15:14:16.448"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:14:16.448" starttime="20160511 15:14:02.141"></status>
+</kw>
+<kw name="Then Search some location">
+<arguments>
+<arg>${Location}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:30.463" starttime="20160511 15:14:16.448"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_search</arg>
+</arguments>
+<msg timestamp="20160511 15:14:30.463" level="INFO">Clicking element 'id=com.eventon.app:id/menu_search'.</msg>
+<status status="PASS" endtime="20160511 15:14:31.057" starttime="20160511 15:14:30.463"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/search_src_text</arg>
+<arg>${Location}</arg>
+</arguments>
+<msg timestamp="20160511 15:14:31.073" level="INFO">Typing text 'San Francisco' into text field 'id=com.eventon.app:id/search_src_text'</msg>
+<status status="PASS" endtime="20160511 15:14:40.002" starttime="20160511 15:14:31.073"></status>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the output.</doc>
+<arguments>
+<arg>adb shell input keyboard keyevent 66 keyboard</arg>
+</arguments>
+<msg timestamp="20160511 15:14:40.002" level="INFO">Running command 'adb shell input keyboard keyevent 66 keyboard 2&gt;&amp;1'.</msg>
+<status status="PASS" endtime="20160511 15:14:41.753" starttime="20160511 15:14:40.002"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Location opened on the map</arg>
+</arguments>
+<msg timestamp="20160511 15:14:41.753" level="INFO">Location opened on the map</msg>
+<status status="PASS" endtime="20160511 15:14:41.753" starttime="20160511 15:14:41.753"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Location found and opened</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:41.753" starttime="20160511 15:14:41.753"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:14:41.753" starttime="20160511 15:14:16.448"></status>
+</kw>
+<kw name="Then Search list of EVENTS">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>class=android.view.View</arg>
+</arguments>
+<msg timestamp="20160511 15:14:41.768" level="INFO">Clicking element 'class=android.view.View'.</msg>
+<status status="PASS" endtime="20160511 15:14:44.284" starttime="20160511 15:14:41.768"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>class=android.widget.ImageButton</arg>
+</arguments>
+<msg timestamp="20160511 15:14:44.284" level="INFO">Clicking element 'class=android.widget.ImageButton'.</msg>
+<status status="PASS" endtime="20160511 15:14:45.284" starttime="20160511 15:14:44.284"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_list</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:46.619" starttime="20160511 15:14:45.284"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:14:47.681" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:14:47.681" starttime="20160511 15:14:46.619"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.eventon.app:id/menu_list</arg>
+</arguments>
+<msg timestamp="20160511 15:14:47.681" level="INFO">Clicking element 'id=com.eventon.app:id/menu_list'.</msg>
+<status status="PASS" endtime="20160511 15:14:48.338" starttime="20160511 15:14:47.681"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>class=android.widget.TextView</arg>
+</arguments>
+<status status="PASS" endtime="20160511 15:14:51.442" starttime="20160511 15:14:48.338"></status>
+</kw>
+<status status="PASS" endtime="20160511 15:14:51.442" starttime="20160511 15:14:41.753"></status>
+</kw>
+<kw name="Then capture page screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20160511 15:14:52.207" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20160511 15:14:52.207" starttime="20160511 15:14:51.442"></status>
+</kw>
+<kw type="teardown" name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application.</doc>
+<status status="PASS" endtime="20160511 15:14:53.301" starttime="20160511 15:14:52.207"></status>
+</kw>
+<tags>
+<tag>005 Main function</tag>
+</tags>
+<status status="PASS" endtime="20160511 15:14:53.301" critical="yes" starttime="20160511 15:14:02.141"></status>
+</test>
+<doc>Mobile EventOn functionality testing</doc>
+<status status="PASS" endtime="20160511 15:14:53.301" starttime="20160511 15:12:21.209"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">001 Start app</stat>
+<stat fail="0" pass="1">002 Main function</stat>
+<stat fail="0" pass="1">003 Main function</stat>
+<stat fail="0" pass="1">004 Main function</stat>
+<stat fail="0" pass="1">005 Main function</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="EventOnTest" pass="5">EventOnTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
